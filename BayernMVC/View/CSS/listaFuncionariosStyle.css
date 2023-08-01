@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Prata&display=swap');*/
+
+body{
+    margin: 0;
+    /*font-family: 'Jost', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.corpo{
+    background-image: url(../Imagens/bayernChampions.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+nav{
+    background-color: #DC052D;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+}
+
+table{
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.centro{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.541);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .9rem;
+    font-size: 15px;
+}
+
+td{
+    padding: 5px 12px;
+}
+
+td:nth-of-type(even){
+    background-color: #dc052c36;
+}
+
+tr:nth-child(odd):hover{
+    background-color: #dc052cbb;
+}
+
+th{
+    background-color: #0065b2c4;
+}
+
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    border-bottom: solid 15px #0066B2;
+}
+
+.meio img{
+    max-height: 120px;
+    max-width: 120px;
+    padding-top: 70px;
+    user-select: none;
+}
+
+.rodape{
+    background-color: #DC052D;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    border-top: solid 10px #0066B2;
+    margin-top: 10px;
+}
+
+.quadroDiv{
+    padding-top: 7%;
+    display: block;
+    text-align: center;
+
+}
+
+.quadro{
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 98%; 
+    height: 480px;
+    
+}
+
+.container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -1.5%;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 3.2%;
+}
+
+.titulo{
+    padding-top: -5px;
+    user-select: none;
+    color: rgb(248, 248, 248);
+    /*-webkit-text-stroke: 0.4px #000000be;*/
+    font-size: 35px;
+}
+
+.link{
+    float: right;
+
+}
+
+.botao{
+    margin-top: 4.5%;
+    background-color: #DC052D;
+    color: white;
+    border: 1.4px solid rgba(0, 0, 0, 0.733);
+    width: 25%;
+    padding: 10px 16px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: auto;/*  Pushes the button to the right */
+    margin-right: 37%;
+}
+
+.botao2{
+    background-color: #DC052D;
+    color: white;
+
+    width: 12%;
+    padding: 0px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.733);
+    margin-left: 10px;
+    height: 38px;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 50px; /* Adjust the bottom value as needed */
+    width: 97.5%;
+    /*padding: 0 20px;*/
+}
+
+.barra{
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #0065b2be;
+    color: white;
+    font-size:18px;
+    font-weight: 450;
+    outline:0;
+}
+.barra::placeholder {
+    color: white; /* Change the font color to red */
+  }

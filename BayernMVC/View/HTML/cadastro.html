@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tela de cadastro - Bayern Munchen</title>
+        <link rel="stylesheet" href="/BayernMVC/View/CSS/cadastroBayernStyle.css">
+        <meta name="description" content="Tela de cadastro do programa de cadastro online do time Bayern Munchen em que os dados do funcionários devem ser preenchidos">
+        <link rel="icon" type="image/svg" href="/BayernMVC/View/Imagens/2048px-Logo_FC_Bayern_München.svg"/>
+    </head>
+
+    <body class="corpo">
+        <nav>
+            <div class="navbar">
+                <div class="esquerda"></div>
+                <div class="meio">
+                    <img src="/BayernMVC/View/Imagens/2048px-Logo_FC_Bayern_München.svg" alt="Logo-Bayern-Munchen">
+                </div>
+                <div class="direita"></div>
+            </div>
+        </nav>
+
+        <div class="quadroDiv">
+            <form class="quadro" action="UsuarioCadastrado.php" method="post">
+                <div>
+                    <h1  class="titulo">Cadastro</h1>
+                </div>
+
+                <div class="container1">
+                    <input type="text" placeholder="Nome:" class="barra" name="nome">
+                    <input type="number" placeholder="Idade:" class="barra" name="idade">
+                </div>
+
+                <div class="container">
+                    <input type="text" placeholder="Função:" class="barra" name="funcao">
+                    <input type="text" placeholder="CPF:" class="barra" name="cpf">
+                </div>
+
+                <div class="container">
+                    <input type="text" placeholder="Nacionalidade:" class="barra" name="pais">
+                    <input type="date" placeholder="Contrato:" class="barra" name="contrato">
+                </div>
+
+                <div class="btn">
+                    <button type="button" class="botao2" onclick="window.location.href='/BayernMVC/View/HTML/escolherBayern.html'">Voltar</button>
+                    <button type="submit" class="botao">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <footer>
+            <div class="rodape">
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<?php
+    include ('protected.php');
+    include ('conexao.php');
+
+    $variavel = 0;
+    $pesquisaAnt = "";
+    $contador = 0;
+
+    if (isset($_GET['voltar'])) {
+        //$variavel += 7;
+        $pesquisa = $conm->real_escape_string($_GET['busca']);
+        $sqlCode = "SELECT * FROM cadastro_bayern WHERE nome LIKE '%$pesquisaAnt%' or cpf LIKE '%$pesquisaAnt%' ORDER BY nome LIMIT 7 OFFSET $variavel";
+        $sqlQuery = $conm->query($sqlCode) or die ("Erro ao consultar". $conm->error);
+    }
+
+    if (isset($_GET['proximo'])) {
+        $variavel += 7;
+
+        if ($contador > $variavel) {
+            $termo = $contador - $variavel;
+
+            $pesquisa = $conm->real_escape_string($_GET['busca']);
+            $sqlCode = "SELECT * FROM cadastro_bayern WHERE nome LIKE '%$pesquisaAnt%' OR cpf LIKE '%$pesquisaAnt%' ORDER BY nome LIMIT 7 OFFSET $termo";
+            $sqlQuery = $conm->query($sqlCode) or die("Erro ao consultar" . $conm->error);
+
+        } else {
+            $pesquisa = $conm->real_escape_string($_GET['busca']);
+            $sqlCode = "SELECT * FROM cadastro_bayern WHERE nome LIKE '%$pesquisaAnt%' OR cpf LIKE '%$pesquisaAnt%' ORDER BY nome LIMIT 7 OFFSET $variavel";
+            $sqlQuery = $conm->query($sqlCode) or die("Erro ao consultar" . $conm->error);
+        }
+
+    }
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tela de Busca Bayern Munchen</title>
+        <link rel="stylesheet" href="../View/CSS/listaFuncionariosStyle.css">
+        <meta name="description" content="Tela de procura de dados dos funcionários do programa de cadastro online do time de futebol Bayern Munchen">
+        <link rel="icon" type="image/svg" href="../View/Imagens/2048px-Logo_FC_Bayern_München.svg"/>
+    </head>
+    <!--class="corpo"-->
+<body class="corpo">
+
+    <nav>
+        <div class="navbar">
+            <div class="esquerda"></div>
+            <div class="meio">
+                <img src="../View/Imagens/2048px-Logo_FC_Bayern_München.svg" alt="Logo-Bayern-Munchen">
+            </div>
+            <div class="direita"></div>
+        </div>
+    </nav>
+    <div class="quadroDiv">
+    <div class="quadro">
+            <h1  class="titulo">Lista de funcionários</h1>
+            <form action="">
+                <div class="container1">
+                    <input name="busca" placeholder="Digite os termos de pesquisa" type="text" class="barra">
+                    <button type="submit" class="botao2">PESQUISAR</button>
+                </div>
+
+                <div class="btn">
+                    <button type="button" class="botao2" onclick="window.location.href='../View/HTML/escolherBayern.html'">Voltar</button>
+                    <button type="submit" class="botao2" name="voltar">Anterior</button>
+                    <button type="submit" class="botao2" name="proximo">Próximo</button>
+                    <button type="button" class="botao2" onclick="window.location.href='logout.php'">Sair</button>
+                </div>
+            </form>
+
+            <br>
+            <main>
+                <section>
+                    <table class="centro" width="80%" border="1">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Função</th>
+                                <th>Cpf</th>
+                                <th>Pais origem</th>
+                                <th>Contrato</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            if(!isset($_GET['busca'])){
+                               
+                        ?>
+
+                        <tr>
+                            <td colspan="6">Digite algo para pesquisar ....</td>
+                        </tr>
+
+                        <?php 
+                            }else{
+
+                                //($variavel == 0) {
+                                    $pesquisa = $conm->real_escape_string($_GET['busca']);
+                                    $sqlCode = "SELECT * FROM cadastro_bayern WHERE nome LIKE '%$pesquisa%' or cpf LIKE '%$pesquisa%' ORDER BY nome LIMIT 7 OFFSET $variavel";
+                                    $sqlQuery = $conm->query($sqlCode) or die ("Erro ao consultar". $conm->error);
+                                    $pesquisaAnt  = $pesquisa;
+                                //}
+
+                                if($sqlQuery->num_rows == 0){
+                                ?>
+
+                                    <tr>
+                                        <td colspan="6">Nenhum resultado encontrado ....</td>
+                                    </tr>
+
+                                <?php 
+                                }else{
+                                    while($dados = $sqlQuery->fetch_assoc()){
+                                        $contador += 1;
+                                    ?>
+                                        <tbody>
+                                            <tr class="tbody">
+                                                <td><?php echo $dados['nome']; ?></td>
+                                                <td><?php echo $dados['idade']; ?></td>
+                                                <td><?php echo $dados['funcao']; ?></td>
+                                                <td><?php echo $dados['cpf']; ?></td>
+                                                <td><?php echo $dados['pais']; ?></td>
+                                                <td><?php echo $dados['contrato']; ?></td>
+                                            </tr>
+                                        </tbody>
+                                    <?php
+                                    }
+                                } 
+                                
+                                ?>
+
+                        <?php
+                            } 
+                        ?>
+                    </table>
+                </section>
+            </main>
+            <br>
+                <!--<form action="index.html">
+                    <button type="submit">Voltar</button>
+                </form>-->
+        </div>
+    </div>
+    <footer>
+        <div class="rodape">
+         </div>
+    </footer>
+</body>
+</html>

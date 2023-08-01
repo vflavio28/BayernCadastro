@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.corpo{
+    background-image: url(../Imagens/wallpaper-12.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    background-color: #DC052D;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    border-bottom: solid 25px #0066B2;
+}
+
+.meio img{
+    max-height: 140px;
+    max-width: 140px;
+    padding-top: 80px;
+    user-select: none;
+}
+
+.rodape{
+    background-color: #DC052D;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    border-top: solid 15px #0066B2;
+}
+
+.quadroDiv{
+    padding-top: 6%;
+    display: block;
+    text-align: center;
+}
+
+.quadro{
+
+    background-color: rgba(255, 255, 255, 0.473);
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 30px;
+    width: 480px; 
+    height: 480px;
+    
+}
+
+.titulo{
+    padding-top: 20px;
+    font-size: 40px;
+    text-decoration: underline;
+    text-underline-position:under;
+    user-select: none;
+}
+
+.dados{
+    text-align: left;
+    padding-left: 60px;
+    font-weight: 540;
+}
+
+.barra{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    
+    background-color: transparent;
+    border-bottom: 3px solid #000000;
+    color: black;
+    margin-bottom: 15px;
+    padding: 5px 5px;
+    width: 85%;
+    box-sizing: border-box;
+
+    font-size:25px;
+    font-weight: 500;
+    outline: 0;
+}
+
+.link{
+    float: right;
+    padding-right: 70px;
+    color: rgb(13, 81, 207);
+    -webkit-text-stroke: 0.5px #555555;
+    cursor: pointer;
+}
+
+.botao{
+    margin-top: 25px;
+
+    background-color: #DC052D;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+    width: 75%;
+    padding: 10px 16px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.botao2{
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #dc052c00;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 20%;
+    height: 20px;
+    padding: 10px 16px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 6px;
+
+}
